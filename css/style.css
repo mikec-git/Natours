@@ -1,8 +1,125 @@
 /*
 COLORS:
-
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
-
 */
+
+/* Reset All Selectors */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Setup font in body because children will inherit */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7; 
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    /* Separate gradients/images with comma */
+    /* Can specify directions */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(126, 213, 111, 0.801), 
+        rgba(40, 180, 133, 0.801)), 
+    url('../img/hero.jpg');
+    background-size: cover;
+    /* top ensures image's top always aligned to top of the browser */
+    background-position: top;
+
+    /* Clip Path (shapes) */
+    /* Points work clockwise */
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+}
+
+.logo-box {
+    /* Works relative to parent relative object (or body if none) */
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* translates distances relating to element itself */
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    /* 
+    animation-delay: 3s;
+    animation-iteration-count: 3;
+     */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
