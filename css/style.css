@@ -17,18 +17,17 @@ Dark green: #28b485
 html {
     /* Set the root font-size for easy relative measurements */
     font-size: 62.5%;
-    box-sizing: border-box;
 }
 
 body {
     /* Setup font in body because children will inherit */
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    /* font-size: 16px; */
     line-height: 1.7; 
     color: #777;
     /* Adds the white border around page */
     padding: 3rem;
+    box-sizing: border-box;
 }
 
 .header {
