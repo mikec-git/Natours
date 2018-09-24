@@ -14,7 +14,7 @@
 
     /* Clip Path (shapes) */
     /* Path vertices form clockwise */
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     &__logo-box {
         /* Works relative to parent relative object (or body if none) */
