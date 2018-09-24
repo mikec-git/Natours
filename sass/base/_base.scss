@@ -1,0 +1,15 @@
+/* Reset All Selectors */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* Set the root font-size for easy relative measurements */
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
