@@ -4,7 +4,7 @@
   "description": "This is a static web page built using advanced CSS and HTML techniques",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass ./sass/main.scss ./css/style.css -w"
   },
   "repository": {
     "type": "git",
