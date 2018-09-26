@@ -7,7 +7,23 @@
 
 html {
     /* Set the root font-size for easy relative measurements */
-    font-size: 62.5%;
+    font-size: 62.5%;       // 1 rem = 10 px
+
+    @include respond(big-desktop) {
+        font-size: 75%;     // 1 rem = 12 px
+    }
+
+    @include respond(tab-land) {
+        font-size: 56.25%;  // 1 rem = 9 px
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;     // 1 rem = 8 px
+    }
+
+    @include respond(phone) {
+        font-size: 50%;
+    }
 }
 
 body {
