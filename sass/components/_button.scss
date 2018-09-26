@@ -1,6 +1,7 @@
 .btn {
     /* :link - element that has not yet been visited (<a>, <area>, <link> */
     /* :visited - represents links that user has already visited */
+    &,
     &:link,
     &:visited {
         display: inline-block;
@@ -11,6 +12,10 @@
         transition: all 200ms;
         position: relative;
         font-size: $default-font-size;
+
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
     
     &:hover {
@@ -24,7 +29,9 @@
     }
     
     /* Clicked state */
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-.1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
     }
