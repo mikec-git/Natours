@@ -21,23 +21,58 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all 300ms 200ms;
+
+        @include respond(tab-land) {
+            width: 85%;            
+        }
     }
 
     &__left {
-        width: 33.33333%;
+        width: 35%;
         display: table-cell;
+        
+        @include respond(tab-land) {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
     }
 
     &__right {
-        width: 66.66667%;
+        width: 65%;
         display: table-cell;
         vertical-align: middle;
-        padding: 3rem 5rem;
+        padding: 1rem 3rem;
+
+        @include respond(tab-land) {
+            width: 100%;
+            height: 50%;
+            display: block;
+
+            .btn {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @include respond(phone) {
+            padding: 3rem 2rem;
+        }
     }
 
      &__img {
         display: block;
         width: 100%;
+
+        @include respond(tab-land) {
+            width: 50%;
+            height: 30rem;
+            float: left;
+        }
+        
+        @include respond(phone) {
+            display: none;
+        }
      }
 
      &__text {
@@ -56,6 +91,14 @@
          -moz-hyphens: auto;
          -ms-hyphens: auto;
          -webkit-hyphens: auto;
+
+         @include respond(tab-land){
+            font-size: $default-font-size;
+         }
+
+         @include respond(phone) {
+            column-count: 1;
+         }
      }
 
      &:target {
