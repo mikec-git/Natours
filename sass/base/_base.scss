@@ -22,10 +22,16 @@ html {
     }
 
     @include respond(phone) {
-        font-size: 50%;
+        font-size: 46.88%;  // 1 rem = 7 px
     }
 }
 
 body {
     box-sizing: border-box;
+    /* Adds the white border around page */
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }
