@@ -1,6 +1,6 @@
 .header {
     position: relative;
-    height: 95vh;
+    height: 85vh;
     /* Separate gradients/images with comma (can add multiple backgrounds) */
     background-image: linear-gradient(
         to right bottom,
@@ -11,14 +11,20 @@
     background-size: cover;
     /* top ensures image's top always aligned to top of the browser */
     background-position: top;
-    /* Clip Path (shapes) */
-    /* Path vertices form clockwise */
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);    
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        /* Clip Path (shapes) */
+        /* Path vertices form clockwise */   
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
     
     // Apple retina display resolution
     // Phones usually have a 2x display so if smaller than 600px, the image only needs to be 1200px max
-    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em)  {
+    @media  (min-resolution: 192dpi) and (min-width: 37.5em), 
+            (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+            (min-width: 125em)  {
         background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8), 
