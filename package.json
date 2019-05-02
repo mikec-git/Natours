@@ -30,8 +30,5 @@
   },
   "dependencies": {
     "event-stream": "^3.3.4"
-  },
-  "resolutions": {
-    "tar": "4.4.3"
   }
 }
